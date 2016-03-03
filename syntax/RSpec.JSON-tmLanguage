@@ -1,0 +1,40 @@
+// [PackageDev] target_format: plist, ext: tmLanguage
+{ "name": "RSpec",
+  "scopeName": "source.ruby.rspec",
+  "uuid": "2e080cc5-634a-45e1-9b56-f98887570a81",
+
+  "patterns": [
+    { "include": "source.ruby" },
+    { "name": "meta.rspec.example",
+      "begin": "^\\s*(it)\\s*((\".*\")|('.*'))?\\s+((do)|{)\\s*",
+      "end": "^\\s*((end)|})\\s*$",
+      "beginCaptures": {
+        "1": { "name": "keyword.other.rspec" },
+        "2": { "name": "string.quoted.rspec" },
+        "6": { "name": "keyword.other.rspec" }
+      },
+      "endCaptures": {
+        "2": { "name": "keyword.other.rspec" }
+      },
+      "patterns": [
+        { "include": "$self" }
+      ]
+    },
+    { "name": "meta.rspec.example.group",
+      "begin": "^\\s*(describe|context)\\s*((\".*\")|('.*')|([^\\s]*))?\\s+((do)|{)\\s*$",
+      "end": "^\\s*((end)|})\\s*$",
+      "beginCaptures": {
+          "1": { "name": "keyword.other.rspec" },
+          "2": { "name": "string.quoted.rspec" },
+          "5": { "name": "support.constant.rspec"},
+          "7": { "name": "keyword.other.rspec" }
+      },
+      "endCaptures": {
+        "2": { "name": "keyword.other.rspec" }
+      },
+      "patterns": [
+        { "include": "$self" }
+      ]
+    }
+  ]
+}

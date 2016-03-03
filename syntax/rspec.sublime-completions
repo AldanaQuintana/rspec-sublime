@@ -1,0 +1,11 @@
+{
+  "scope": "source.ruby.rspec",
+  "completions":
+  [
+    {"trigger": "describe", "contents": "describe \"${1:spec description}\" do\n  $2\nend"},
+    {"trigger": "context", "contents": "context \"${1:context description}\" do\n  $2\nend"},
+    {"trigger": "it", "contents": "it \"${1:assertion description}\" do\n  expect($2)$3 $4 \nend"},
+    {"trigger": "let", "contents": "let!$1(${2:variable_name}){$3}"},
+    {"trigger": "before", "contents": "before do\n  $1\nend"}
+  ]
+}
